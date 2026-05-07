@@ -4,8 +4,8 @@ Nodejs
 ## Como executar
 Clone o repositório:
 ```
-git clone <repo>
-cd <repo>
+git clone https://github.com/hiGuigo/AV2-TPI
+cd https://github.com/hiGuigo/AV2-TPI
 ```
 
 Instale as dependências:
@@ -43,4 +43,4 @@ Cada usuário tem suas limitações dentro do sistema, como páginas inteiras qu
 Para desenvolver a interface do sistema foram utilizados React e JavaScript. Para navegação visando uma "SPA", React-Router. Para estilização e responsividade, Tailwindcss.
 
 ## Dos demais detalhes
-Para maior detalhamento sobre o projeto, como objetivo, requisitos funcionais e hierarquia de informações, consulte a documentação completa: <a href="#">Sistema Aerocode – Interface Gráfica (GUI SPA)</a>
+Para maior detalhamento sobre o projeto, como objetivo, requisitos funcionais e hierarquia de informações, consulte a documentação completa: <a href="https://github.com/hiGuigo/AV2-TPI/blob/main/Sistema%20Aerocode%20%E2%80%93%20Interface%20Gr%C3%A1fica%20(GUI%20SPA).pdf">Sistema Aerocode – Interface Gráfica (GUI SPA)</a>
