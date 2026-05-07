@@ -4,8 +4,8 @@ Nodejs
 ## Como executar
 Clone o repositório:
 ```
-git clone https://github.com/hiGuigo/AV2-TPI
-cd https://github.com/hiGuigo/AV2-TPI
+git clone https://github.com/hiGuigo/AV2-TPI.git
+cd https://github.com/hiGuigo/AV2-TPI.git
 ```
 
 Instale as dependências:
