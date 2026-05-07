@@ -16,18 +16,18 @@ export default function DetalhesRelatorio() {
     dataEntrega: "2026-06-15",
 
     pecas: [
-      { nome: "Motor Turbofan", status: "OK" },
-      { nome: "Asa Direita", status: "Em produção" },
+      { nome: "Motor Turbofan", status: "Pronta" },
+      { nome: "Asa Direita", status: "Pronta" },
     ],
 
     etapas: [
-      { nome: "Montagem estrutural", status: "Finalizada" },
-      { nome: "Instalação elétrica", status: "Em andamento" },
+      { nome: "Montagem estrutural", status: "Concluída" },
+      { nome: "Instalação elétrica", status: "Concluída" },
     ],
 
     testes: [
       { tipo: "Teste de pressão", resultado: "Aprovado" },
-      { tipo: "Teste de voo", resultado: "Pendente" },
+      { tipo: "Teste de voo", resultado: "Aprovado" },
     ],
   };
 

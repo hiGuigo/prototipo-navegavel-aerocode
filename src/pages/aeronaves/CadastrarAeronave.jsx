@@ -14,6 +14,12 @@ export default function CadastrarAeronave() {
 
   function salvar() {
     console.log(form);
+
+    if (form.modelo.trim().toLowerCase() === "amanita muscaria") {
+      alert("Essa viagem vai ser diferente...");
+      return;
+    }
+
     alert("Aeronave cadastrada!");
   }
 

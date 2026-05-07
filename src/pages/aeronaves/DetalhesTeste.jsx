@@ -8,20 +8,30 @@ export default function DetalhesTeste() {
 
   const podeVerBotoes = nivel !== "operador";
 
-  const [resultado, setResultado] = useState("Aprovado");
+  const [resultado, setResultado] = useState("Reprovado");
+
+  const [modalAberto, setModalAberto] = useState(false);
 
   const teste = {
-    tipo: "Teste de Voo",
+    nome: "Teste de Voo",
+    tipo: "Aerodinâmico",
   };
 
-  function alterarResultado() {
-    const novoResultado = prompt("Novo status (Aprovador / Reprovado):");
-
-    if (novoResultado) {
-      setResultado(novoResultado);
-      alert("Resultado atualizado!");
-    }
+  function alterarResultado(novoResultado) {
+    setResultado(novoResultado);
+    setModalAberto(false);
+    alert("Resultado atualizado!");
   }
+
+  function obterOpcoesResultado() {
+    if (resultado === "Reprovado") {
+      return ["Aprovado"];
+    }
+
+    return [];
+  }
+
+  const opcoesResultado = obterOpcoesResultado();
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -32,6 +42,10 @@ export default function DetalhesTeste() {
 
       {/* INFORMAÇÕES */}
       <div className="bg-white p-6 rounded-lg shadow mb-6 space-y-4">
+        <p>
+          <span className="font-semibold text-gray-700">Nome:</span>{" "}
+          {teste.nome}
+        </p>
         <p>
           <span className="font-semibold text-gray-700">Tipo:</span>{" "}
           {teste.tipo}
@@ -49,15 +63,44 @@ export default function DetalhesTeste() {
         </p>
       </div>
 
-      {podeVerBotoes && (
+      {/* AÇÕES */}
+      {podeVerBotoes && resultado !== "Aprovado" && (
         <>
           <button
-            onClick={alterarResultado}
+            onClick={() => setModalAberto(true)}
             className="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded transition"
           >
-            Alterar Status
+            Alterar Resultado
           </button>
         </>
+      )}
+
+      {/* MODAL */}
+      {modalAberto && (
+        <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-80">
+            <h2 className="text-lg font-bold mb-4">Selecionar Resultado</h2>
+
+            <div className="space-y-2">
+              {opcoesResultado.map((opcao) => (
+                <button
+                  key={opcao}
+                  onClick={() => alterarResultado(opcao)}
+                  className="w-full text-left bg-gray-100 hover:bg-gray-200 p-2 rounded transition"
+                >
+                  {opcao}
+                </button>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setModalAberto(false)}
+              className="mt-4 w-full bg-gray-500 hover:bg-gray-600 text-white py-2 rounded transition"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

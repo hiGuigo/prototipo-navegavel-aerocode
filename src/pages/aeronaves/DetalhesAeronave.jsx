@@ -9,6 +9,7 @@ export default function DetalhesAeronave() {
     id: 1,
     nome: "Boeing 737",
     status: "Em produção",
+    tipo: "Comercial",
   };
 
   const etapas = [
@@ -35,6 +36,13 @@ export default function DetalhesAeronave() {
       {/* CABEÇALHO */}
       <div className="bg-white p-6 rounded-lg shadow mb-6">
         <h1 className="text-2xl font-bold text-gray-800">{aeronave.nome}</h1>
+
+        <p className="text-gray-600 mt-2">
+          Tipo:
+          <span className="ml-2 font-semibold text-gray-500">
+            {aeronave.tipo}
+          </span>
+        </p>
 
         <p className="text-gray-600 mt-2">
           Status:
